@@ -8,7 +8,6 @@ urls = [
     ''
     
 ]
-
 from langchain.document_loaders import UnstructuredURLLoader
 loaders = UnstructuredURLLoader(urls=urls)
 data = loaders.load()
@@ -18,7 +17,6 @@ text_splitter = CharacterTextSplitter(separator='\n',
                                       chunk_size=1000,
                                       chunk_overlap=200)
 docs = text_splitter.split_documents(data)
-
 
 import pickle
 import faiss
